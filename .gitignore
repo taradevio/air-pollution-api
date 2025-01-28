@@ -1,4 +1,8 @@
+#env
 .env
-package-lock.json
-package.json
+
+#node modules
 node_modules
+
+# Ignore log files
+*.log
