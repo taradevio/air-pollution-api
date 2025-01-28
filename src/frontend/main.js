@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch("/api/data");
       const data = await response.json();
 
-      console.log(data);
       const pollutantNames = {
         co: "Carbon Monoxide (CO)",
         no2: "Nitrogen dioxide (NO2)",
