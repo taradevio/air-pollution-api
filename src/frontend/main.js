@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // this is search feature
-  // this is edited from main
-  // this is edited from search-feature
   const fetchAirPollution = async () => {
     try {
       const response = await fetch("/api/data");
@@ -83,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const getMonth = months[unix.getMonth()];
         const getDate = unix.getDate();
         const getHour = unix.getHours();
-        const getMinute = '0' + unix.getMinutes();
+        const getMinute = "0" + unix.getMinutes();
         const getCalendarDate = getDate + "/" + getMonth + "/" + getYear;
         const getTime = getHour + ":" + getMinute.substring(1);
         return `
@@ -125,6 +122,47 @@ document.addEventListener("DOMContentLoaded", () => {
       const lastUpdate = document.querySelector(".item:nth-child(5)");
       const aqiScore = document.querySelector(".aqi-score");
       const warning = document.querySelector(".warnings");
+      const search = document.getElementById("search");
+      const resultWrapper = document.querySelector(".input-result");
+      const resultList = document.querySelector(".input-list");
+      const cityName = 'Muko'
+
+
+      search.addEventListener("input", (e) => {
+        let value = e.target.value.trim().toLowerCase();
+
+        // when no input, it will delete list
+        if(value === '') {
+          resultList.innerHTML = ''
+          return;
+        }
+
+        // so, if the input starts with anything inside the cityName variable, it will return the renderResult
+        if(cityName.toLowerCase().startsWith(value)){
+          renderResult(cityName)
+        } else {
+          renderNoResult()
+        }
+      });
+
+      function renderResult(input) {
+        resultList.innerHTML = ''
+        const showResult = document.createElement("li");
+        showResult.textContent = input;
+        resultList.append(showResult);
+        resultWrapper.appendChild(resultList);
+
+      }
+
+      function renderNoResult() {
+        resultList.innerHTML = ''
+        const showNoResult = document.createElement("li");
+        showNoResult.textContent = "No data is found";
+        resultList.append(showNoResult);
+        resultWrapper.appendChild(resultList);
+
+      }
+
       item.innerHTML = pollutantCard;
       aqiScore.innerHTML = aqi;
       lastUpdate.innerHTML = timeConverter();
