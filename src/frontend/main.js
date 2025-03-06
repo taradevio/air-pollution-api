@@ -80,9 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const getMonth = months[unix.getMonth()];
         const getDate = unix.getDate();
         const getHour = unix.getHours();
-        const getMinute = unix.getMinutes();
+        const getMinute = '0' + unix.getMinutes();
         const getCalendarDate = getDate + "/" + getMonth + "/" + getYear;
-        const getTime = getHour + ":" + getMinute;
+        const getTime = getHour + ":" + getMinute.substring(1);
         return `
                   <h2>Last Updated:</h2>
                   <time class="date">${getCalendarDate}</time><br />

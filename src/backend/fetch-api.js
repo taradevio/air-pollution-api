@@ -16,8 +16,6 @@ const url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Construct path to frontend directory
-// '../..' goes up two directories, then into src/frontend
 const frontendPath = path.join(__dirname, '..', '..', 'src', 'frontend');
 app.use(express.static(frontendPath));
 
@@ -36,7 +34,6 @@ app.get('/api/data', async (req, res) => {
 })
 
 app.get('/', (req, res) => {
-     // Serve index.html when users visit the root URL
     res.sendFile(path.join(frontendPath, 'index.html'))
 })
 
