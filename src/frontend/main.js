@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // this is search feature
   // this is edited from main
+  // this is edited from search-feature
   const fetchAirPollution = async () => {
     try {
       const response = await fetch("/api/data");
