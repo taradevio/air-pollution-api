@@ -8,6 +8,7 @@
     calc(0.8125rem + (16 - 13) * ((100vw - 360px) / (1366 - 360))),
     16px
   );
+  list-style-type: none;
 }
 
 #wrapper {
@@ -17,6 +18,7 @@
 }
 
 .bento {
+  position: relative;
   padding: 1rem;
   display: grid;
   height: 100%;
@@ -30,6 +32,18 @@
     "index chart chart chart chart rec"
     "date chart chart chart chart rec"
     "date chart chart chart chart rec";
+}
+
+.bento .input {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  translate: -50%;
+}
+
+.bento .input .input-result {
+  background-color: whitesmoke;
+  padding: 0 4px;
 }
 
 .item {
