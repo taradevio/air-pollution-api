@@ -14,11 +14,9 @@
 #wrapper {
   max-width: 1366px;
   height: 100dvh;
-  position: relative;
 }
 
 .bento {
-  position: relative;
   padding: 1rem;
   display: grid;
   height: 100%;
@@ -32,13 +30,6 @@
     "index chart chart chart chart rec"
     "date chart chart chart chart rec"
     "date chart chart chart chart rec";
-}
-
-.bento .input {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  translate: -50%;
 }
 
 .bento .input .input-result {
@@ -103,6 +94,32 @@
   padding-top: 1rem;
   padding-bottom: 2.5rem;
   text-align: left;
+  position: relative;
+}
+#wrapper .input {
+  position: absolute;
+  top: 1rem;
+  right: 15%;
+  z-index: 10;
+}
+
+.input > input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.input .search-icon {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}
+
+.input .input-result .input-list > .list {
+  padding: 0.5rem 1.2rem;
+}
+
+#wrapper .input #search {
+  padding: 0.5rem 1.2rem;
+  border: none;
 }
 
 .bento .item:nth-child(2) .highlights h1 {
@@ -247,6 +264,31 @@
 
   h3 {
     font-size: 1rem;
+  }
+
+  #wrapper .bento .highlights .input {
+    position: fixed;
+    z-index: 999;
+    top: 1rem;
+    right: 0;
+  }
+
+  #wrapper .bento .highlights .input:hover #search {
+    width: 200px;
+    opacity: 1;
+    padding: 0.5rem 1.2rem;
+  }
+
+  #wrapper .bento .highlights .input .search-icon {
+    top: 2px;
+    width: 25px;
+  }
+
+  #wrapper .bento .highlights .input #search {
+    width: 0;
+    opacity: 0;
+    padding: 0;
+    transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
   }
 
   .bento {
