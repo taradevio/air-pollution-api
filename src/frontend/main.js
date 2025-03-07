@@ -148,6 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
       function renderResult(input) {
         resultList.innerHTML = ''
         const showResult = document.createElement("li");
+        showResult.classList.add('list')
         showResult.textContent = input;
         resultList.append(showResult);
         resultWrapper.appendChild(resultList);
@@ -157,7 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
       function renderNoResult() {
         resultList.innerHTML = ''
         const showNoResult = document.createElement("li");
-        showNoResult.textContent = "No data is found";
+        showNoResult.classList.add('list')
+        showNoResult.textContent = "No city is found";
         resultList.append(showNoResult);
         resultWrapper.appendChild(resultList);
 
