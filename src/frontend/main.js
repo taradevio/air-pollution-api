@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const aqiScore = document.querySelector(".aqi-score");
       const warning = document.querySelector(".warnings");
       const search = document.getElementById("search");
+      const input = document.querySelector('.input');
       const resultWrapper = document.querySelector(".input-result");
       const resultList = document.querySelector(".input-list");
       const cityName = 'Muko'
@@ -144,6 +145,19 @@ document.addEventListener("DOMContentLoaded", () => {
           renderNoResult()
         }
       });
+
+
+      input.addEventListener('mouseleave', () => {
+        search.blur();
+        search.value = ''
+        resultList.innerHTML = ''
+        
+      })
+
+
+      // search.addEventListener('blur', () => {
+      //   resultList.innerHTML = ''
+      // })
 
       function renderResult(input) {
         resultList.innerHTML = ''
