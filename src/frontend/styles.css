@@ -256,6 +256,7 @@
 @media (min-width: 360px) and (max-width: 767px) {
   h1 {
     font-size: 1.2rem;
+    margin-top: 4.8rem;
   }
 
   h2 {
@@ -267,31 +268,24 @@
   }
 
   #wrapper .bento .highlights .input {
-    position: fixed;
-    z-index: 999;
-    top: 1.3rem;
-    right: 1rem;
-  }
-
-  #wrapper .bento .highlights .input:hover #search {
-    width: 200px;
-    opacity: 1;
-    padding: 0.5rem 1.2rem;
+    top: 1rem;
+    left: 0;
+    margin-bottom: 2rem;
   }
 
   #wrapper .bento .highlights .input .search-icon {
-    top: 2px;
-    right: 0;
-    width: 25px;
-    background-color: white;
-    border-radius: 5px;
+    position: absolute;
+    top: 0.4rem;
+    left: 150px;
   }
 
-  #wrapper .bento .highlights .input #search {
-    width: 0;
-    opacity: 0;
-    padding: 0;
-    transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  #wrapper .bento .highlights .input .input-result {
+    width: auto;
+    max-width: 180px;
+  }
+
+  .input .input-result .input-list > .list {
+    padding: 0.5rem 0.8rem;
   }
 
   .bento {
