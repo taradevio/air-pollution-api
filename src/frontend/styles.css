@@ -269,8 +269,8 @@
   #wrapper .bento .highlights .input {
     position: fixed;
     z-index: 999;
-    top: 1rem;
-    right: 0;
+    top: 1.3rem;
+    right: 1rem;
   }
 
   #wrapper .bento .highlights .input:hover #search {
@@ -281,7 +281,10 @@
 
   #wrapper .bento .highlights .input .search-icon {
     top: 2px;
+    right: 0;
     width: 25px;
+    background-color: white;
+    border-radius: 5px;
   }
 
   #wrapper .bento .highlights .input #search {
