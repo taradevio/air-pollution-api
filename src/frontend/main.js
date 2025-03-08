@@ -80,9 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const getMonth = months[unix.getMonth()];
         const getDate = unix.getDate();
         const getHour = unix.getHours();
-        const getMinute = "0" + unix.getMinutes();
+        const getMinute = unix.getMinutes().toString().padStart(2, '0');
         const getCalendarDate = getDate + "/" + getMonth + "/" + getYear;
-        const getTime = getHour + ":" + getMinute.substring(1);
+        const getTime = getHour + ":" + getMinute;
         return `
                   <h2>Last Updated:</h2>
                   <time class="date">${getCalendarDate}</time><br />
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const lastUpdate = document.querySelector(".item:nth-child(5)");
       const aqiScore = document.querySelector(".aqi-score");
       const warning = document.querySelector(".warnings");
-      const search = document.getElementById("search");
+      // const search = document.getElementById("search");
       const input = document.querySelector('.input');
       const resultWrapper = document.querySelector(".input-result");
       const resultList = document.querySelector(".input-list");
@@ -145,19 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
           renderNoResult()
         }
       });
-
-
-      input.addEventListener('mouseleave', () => {
-        search.blur();
-        search.value = ''
-        resultList.innerHTML = ''
-        
-      })
-
-
-      // search.addEventListener('blur', () => {
-      //   resultList.innerHTML = ''
-      // })
 
       function renderResult(input) {
         resultList.innerHTML = ''
